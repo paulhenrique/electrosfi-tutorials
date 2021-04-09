@@ -29,21 +29,22 @@
       </v-btn>
     </v-row>
     <img
-      id="colaborateImg"
+      id="welcomeImg"
       width="200"
       draggable="false"
-      src="~/assets/img/colaborate.svg"
+      src="~/assets/img/welcome.svg"
       alt=""
     >
   </div>
 </template>
 <style lang="scss">
-#colaborateImg {
-  min-height: 100vh;
+#welcomeImg {
   user-select: none;
   position: fixed;
-  left: 0;
-  width: 30vw;
-  top: 0;
+  right: 0;
+  width: 50vw;
+  bottom: 0;
+  right: -210px;
+  z-index: 0;
 }
 </style>
