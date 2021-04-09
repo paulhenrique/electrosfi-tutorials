@@ -3,7 +3,7 @@
     <v-app-bar fixed app>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-tabs centered>
+      <v-tabs centered :color="colorTabs">
         <v-tab to="/">
           Boas vindas
         </v-tab>
@@ -53,6 +53,20 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'ElectrosFI Tutorials'
+    }
+  },
+  computed: {
+    colorTabs () {
+      const routes = [
+        {
+          rota: 'colaborar',
+          color: 'purple'
+        },
+        { rota: 'index', color: 'cyan' },
+        { rota: 'tutoriais', color: 'green' }
+      ]
+      const color = routes.filter(el => el.rota === this.$route.name)[0].color
+      return color
     }
   }
 }
