@@ -6,7 +6,22 @@
     <p class="text-subtitle">
       Quer colaborar com alguma atividade ou sugestão para o ElectrosFI?
     </p>
-
+    <p class="mt-6">
+      Envie um e-mail para
+      <a href="mailto:electrosfi@gmail.com">electrosfi@gmail.com</a> com o
+      assunto "Proposta de Atividade ElectrosFI - [Titulo-da-Atividade] -
+      [Autor]". Busque seguir os mesmos padrões vistos aqui, lembre-se que a
+      inserção de imagens e vídeos facilita muito a compreensão das atividades.
+    </p>
+    <v-row class="mt-12">
+      <v-spacer />
+      <v-btn large rounded color="purple" to="/tutoriais" dark>
+        <v-icon left>
+          mdi-chevron-left
+        </v-icon>
+        Voltar aos Tutoriais
+      </v-btn>
+    </v-row>
     <img
       id="colaborateImg"
       width="200"
