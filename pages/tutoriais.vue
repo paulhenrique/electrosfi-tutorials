@@ -1,7 +1,7 @@
 <template>
   <div id="atividades">
     <p class="text-h3">
-      Buscar atividade
+      Buscar tutorial
     </p>
     <p class="text-subtitle">
       Digite um termo para encontrar alguma atividade
@@ -31,21 +31,10 @@
     <v-card v-for="atividade in atividadesFiltradas" :key="atividade.title">
       <v-card-title>{{ atividade.title }}</v-card-title>
     </v-card>
-    <v-dialog v-model="error" max-width="300">
-      <v-card>
-        <v-card-title>Algo de errado aconteceu</v-card-title>
-        <v-card-text>
-          Isso é possivelmente um problema com o nosso servidor, por favor tente
-          mais tarde.
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn dark large color="cyan" @click="errorMessage = ''">
-            Entendi!
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <ErrorDialog
+      :error-message="errorMessage"
+      @setErrorMessage="setErrorMessage"
+    />
   </div>
 </template>
 <script>
@@ -58,14 +47,6 @@ export default {
     }
   },
   computed: {
-    error: {
-      get () {
-        return this.errorMessage !== ''
-      },
-      set () {
-        this.errorMessage = ''
-      }
-    },
     statusBusca () {
       return this.atividadesFiltradas.length === 0 && this.searchTerm !== ''
     },
@@ -107,6 +88,11 @@ export default {
       .catch((err) => {
         this.errorMessage = err.message
       })
+  },
+  methods: {
+    setErrorMessage (content) {
+      this.errorMessage = content
+    }
   }
 }
 </script>
