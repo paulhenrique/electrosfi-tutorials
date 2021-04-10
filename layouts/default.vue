@@ -58,14 +58,15 @@ export default {
   computed: {
     colorTabs () {
       const routes = [
-        {
-          rota: 'colaborar',
-          color: 'purple'
-        },
+        { rota: 'colaborar', color: 'purple' },
         { rota: 'index', color: 'cyan' },
-        { rota: 'tutoriais', color: 'green' }
+        { rota: 'tutoriais', color: 'green' },
+        { rota: 'api', color: 'cyan' }
       ]
-      const color = routes.filter(el => el.rota === this.$route.name)[0].color
+      let color = 'cyan'
+      if (this.$route.name) {
+        color = routes.filter(el => el.rota === this.$route.name)[0].color
+      }
       return color
     }
   }
