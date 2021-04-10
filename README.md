@@ -1,4 +1,4 @@
-# Tutoriais do ElectrosFI
+# Tutoriais do ElectrosFI (Em desenvolvimento)
 
 Este repositório contém os arquivos para o desenvolvimento da página electrosfi-tutorials desenvolvida para a divulgação e colaboração entre usuário do electrosfi para aplicações didáticas e educacionais da ferramenta.
 
