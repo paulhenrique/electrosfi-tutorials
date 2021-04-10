@@ -59,9 +59,8 @@ export default {
     colorTabs () {
       const routes = [
         { rota: 'colaborar', color: 'purple' },
-        { rota: 'index', color: 'cyan' },
-        { rota: 'tutoriais', color: 'green' },
-        { rota: 'api', color: 'cyan' }
+        { rota: 'index', color: 'orange' },
+        { rota: 'tutoriais', color: 'cyan' }
       ]
       let color = 'cyan'
       if (this.$route.name) {
