@@ -14,22 +14,24 @@
       :hint="message"
       label="Digite aqui um termo para busca"
     />
-    <center>
-      <img
-        v-if="searchTerm === ''"
-        class="responsiveImg"
-        src="~/assets/img/search.svg"
-        alt="Figura de Busca"
-      >
-      <img
-        v-if="atividadesFiltradas.length === 0 && searchTerm !== ''"
-        class="responsiveImg"
-        src="~/assets/img/void.svg"
-        alt="Figura de Busca"
-      >
-    </center>
-    <v-card v-for="atividade in atividadesFiltradas" :key="atividade.title">
+    <ImagesStatus
+      :atividades-filtradas="atividadesFiltradas"
+      :search-term="searchTerm"
+    />
+    <v-card
+      v-for="atividade in atividadesFiltradas"
+      :key="atividade.title"
+      class="mt-2"
+      to="atividade"
+    >
+      <v-img
+        max-height="100"
+        :src="atividade.image"
+        alt="Imagem de um arquivo"
+        gradient="to bottom, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+      />
       <v-card-title>{{ atividade.title }}</v-card-title>
+      <v-card-text>{{ atividade.description }}</v-card-text>
     </v-card>
     <ErrorDialog
       :error-message="errorMessage"
