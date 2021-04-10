@@ -7,16 +7,17 @@
         <v-tab to="/">
           Boas vindas
         </v-tab>
-        <v-tab to="tutoriais">
+        <v-tab to="/tutoriais">
           Tutoriais
         </v-tab>
-        <v-tab to="colaborar">
+        <v-tab to="/colaborar">
           Colaborar
         </v-tab>
       </v-tabs>
       <v-spacer />
-
-      <v-app-bar-nav-icon />
+      <v-btn icon light>
+        <v-icon>mdi-information</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-main class="pt-12 mt-12">
       <v-container>
@@ -60,11 +61,14 @@ export default {
       const routes = [
         { rota: 'colaborar', color: 'purple' },
         { rota: 'index', color: 'orange' },
-        { rota: 'tutoriais', color: 'cyan' }
+        { rota: 'tutoriais', color: 'cyan' },
+        { rota: 'tutoriais-id', color: 'cyan' }
       ]
       let color = 'cyan'
+      console.log(this.$route)
       if (this.$route.name) {
-        color = routes.filter(el => el.rota === this.$route.name)[0].color
+        const filredRoutes = routes.filter(el => el.rota === this.$route.name)
+        color = filredRoutes.length > 0 ? filredRoutes[0].color : 'cyan'
       }
       return color
     }
